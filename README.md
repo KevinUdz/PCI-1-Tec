@@ -62,51 +62,87 @@ Además, al ser un servicio en línea disponible las 24 horas del día, se adapt
 4. Ver carrito 
 5. Finalizar compra 
 6. Salir
+
 4.2 Leer opcion del usuario (int)
 
 **Si la opcion es "ingresar producto":**
+
 5. Leer id-producto (int)
+
 5.1 Mostrar nombre (string) y precio (float) del producto
+
 5.2 Leer confirmación (string) (Si/No)
+
 **Si confirmacion es "si":**
+
 5.4 Agregar producto a Lista_carrito
+
 5.5 Sumar precio (float) al Monto_total
+
 5.6 Actualizar Monto_total con impuestos
+
 **Si no:**
+
 5.7 Regresar al menu principal
 
 **Si la opción es "agregar otro producto":**
+
 6. Leer nuevo id-producto (int)
+
 6.1 Verificar si el produto existe
+
 **Si existe:**
+
 6.2 Añadir producto a Lista_carrito
+
 6.3 Sumar precio (float) a Monto_total
+
 6.4 Actualizar Monto_total con impuestos
+
 **Si no existe:**
+
 6.5 Mostrar mensaje de producto no encontrado (string)
 
 **Si la opción es "quitar_producto":**
+
 7. Leer id_producto (int) que desea quitar
+
 7.1 Buscar producto en Lista_carrito
+
 **Si el producto se encuentra:**
+
 7.2 Eliminar producto de Lista_carrito
+
 7.3 Restar precio (float) del producto en Monto_total
+
 **Si no se encuentra:**
+
 7.4 Mostrar mensaje de producto no encontrado (string)
 
 **Si la opción es ver_carrito:**
+
 8. Mostrar todos los productos en Lista_carrito (lista de diccionarios)
+
 8.1 Mostrar Monto_total (float)
 
 **Si la opción es finalizar_compra":**
+
 9. Calcular Monto_toal con impuestos
+
 9.1 Mostrar Monto_total (float) a pagar 
+
 9.2 Mostrar Lista_carrito (lista de diccionario)
+
 9.3 Leer confirmación de pago (string) (Si/No)
+
 **Si el usuario realizo el pago:**
+
 9.4 Vaciar Lista_carrito (lista vacia de diccionarios)
+
 9.5 Mostrar mensaje de agradecimiento (string)
+
 **Si el usuario no realiza el pago:**
+
 9.6 Volver al menu principal
 
 **Si la opción es "salir":**
@@ -115,6 +151,9 @@ Además, al ser un servicio en línea disponible las 24 horas del día, se adapt
 
 
 ## Salida
+
 11. Detalles del carrito (lista de productos con sus precios y cantidades)
+
 11.1 Monto total después de impuestos (float)
+
 11.2 Mensaje de agradecimiento después del pago (string)
