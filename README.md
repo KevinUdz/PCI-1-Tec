@@ -110,6 +110,7 @@ Además, al ser un servicio en línea disponible las 24 horas del día, se adapt
 9.6 Volver al menu principal
 
 **Si la opción es "salir":**
+
 10. Terminar programa
 
 
