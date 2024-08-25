@@ -1,86 +1,119 @@
+Mi proyecto se basa en una "tiendita" en línea donde los usuarios pueden explorar diferentes categorías como comida, bebidas y snacks. A través de esta plataforma, los consumidores pueden seleccionar lo que necesitan y recibir un precio exacto de todo lo que han escogido. Este proyecto es útil porque ahorra tiempo al usuario al eliminar la necesidad de desplazarse físicamente a una tienda, permitiéndole realizar sus compras desde cualquier lugar y en cualquier momento.
+
+Lo que hace que esta "tiendita" sea especialmente interesante es su diseño orientado a la comodidad y eficiencia del usuario. Al ofrecer una experiencia de compra organizada por categorías claras, facilita la exploración y comparación de productos. La plataforma no solo brinda comodidad, sino también una experiencia de compra segura y transparente, al garantizar que el precio total se muestre con precisión antes de completar la compra.
+
+Además, al ser un servicio en línea disponible las 24 horas del día, se adapta perfectamente a los estilos de vida modernos, donde el tiempo es un recurso valioso. La flexibilidad para hacer compras en cualquier momento, combinada con la simplicidad de la interfaz, asegura que los usuarios puedan realizar sus compras de manera rápida y sin complicaciones.
+
+
+
+
 ### Food
-| Item | Quantity | Price |
-| --- | --- | --- |
-| Apple | 10 | $3.00 |
-| Banana | 20 | $32.50 |
-| Orange | 15 | $1.50 |
-| Bread | 30 | $2.00 |
-| Milk | 25 | $3.00 |
+| ID | Item | Quantity | Price |
+| --- | --- | --- | --- |
+| 1 | Apple | 25 | $10.00 |
+| 2 | Banana | 17 | $6.20 |
+| 3 | Orange | 15 | $7.99 |
+| 4 | Bread | 23 | $50.00 |
+| 5 | Milk | 25 | $35.00 |
+| 6 | beef | 15 | $130.00 |
 
 
 
 
 
 ### Drinks
-| Item | Quantity | Price |
-| --- | --- | --- |
-| Soda| 10 | $3.00 |
-| Juice| 20 | $32.50 |
-| Water| 15 | $1.50 |
-| Coffee| 30 | $2.00 |
-| Tea| 25 | $3.00 |
+| ID | Item | Quantity | Price |
+| --- | --- | --- | --- |
+| 7 | Soda (600 ml)| 20 | $20.00 |
+| 8 | Juice (960 ml)| 25 | $38.00 |
+| 9 | Water (1 L)| 30 | $10.00 |
+| 10 | Coffee (281 gr)| 12 | $32.50 |
+| 11| Fuze tea (453 gr)| 17 | $15.00 |
 
 
 
 
 
 ### Snacks
-| Item | Quantity | Price |
-| --- | --- | --- |
-| Chips| 10 | $3.00 |
-| Cookies| 20 | $32.50 |
-| Nuts| 15 | $1.50 |
-| Candy| 30 | $2.00 |
+| ID | Item | Quantity | Price |
+|--- | --- | --- | --- |
+| 12 | Chips (160 gr)| 27 | $55.60 |
+| 13 | Cookies| 20 | $20.50 |
+| 14| Nuts| 15 | $40.50 |
+| 15 | Skittles| 23 | $15.00 |
 
 
-**Entrada**
-Id-producto
-Precio-producto
-Impuestos
-Monto-total
+
+## Entrada
+
+1. Lista_carrito como lista vacia de diccionarios (Cada diccionario con campos id (int), nombre (string), cantidad (int), precio (float))
+2. Monto_total como 0.0 (float)
+3. Impuestos como 0.15 (float) (15% )
          
-  **Proceso**
- 1. Usuario ingresa id-producto se despliega el nombre y precio-producto
- 2. Si el usuario presiona si, el producto se añade a "lista_carrito" Si no regresa a ingresar un id-de un producto
- 2.1 Y el precio-producto se suma al monto-total y el monto-total + impuestos
- 3. Si el usuario quiere agregar un producto mas escribe agregar y podrá ingresar otro producto (id_producto)
- 3.1. Si el usuario quiere quitar un producto escribe "quitar" y el id-producto que desea quitar
- 3.2. Si no despliega "lista_carrito" 
- 4. Si el usuario ingresa pagar habra realizado su compra
 
-               
-       **Salida**
-       1. Lista carrito monto_total
+## Proceso
+
+**Mostrar menú principal**
+4. Mientars el usuario no elija salir:
+4.1 Mostrar opciónes:
+1. Ingresar producto 
+2. Agregar otro producto
+3. Quitar producto
+4. Ver carrito 
+5. Finalizar compra 
+6. Salir
+4.2 Leer opcion del usuario (int)
+
+**Si la opcion es "ingresar producto":**
+5. Leer id-producto (int)
+5.1 Mostrar nombre (string) y precio (float) del producto
+5.2 Leer confirmación (string) (Si/No)
+**Si confirmacion es "si":**
+5.4 Agregar producto a Lista_carrito
+5.5 Sumar precio (float) al Monto_total
+5.6 Actualizar Monto_total con impuestos
+**Si no:**
+5.7 Regresar al menu principal
+
+**Si la opción es "agregar otro producto":**
+6. Leer nuevo id-producto (int)
+6.1 Verificar si el produto existe
+**Si existe:**
+6.2 Añadir producto a Lista_carrito
+6.3 Sumar precio (float) a Monto_total
+6.4 Actualizar Monto_total con impuestos
+**Si no existe:**
+6.5 Mostrar mensaje de producto no encontrado (string)
+
+**Si la opción es "quitar_producto":**
+7. Leer id_producto (int) que desea quitar
+7.1 Buscar producto en Lista_carrito
+**Si el producto se encuentra:**
+7.2 Eliminar producto de Lista_carrito
+7.3 Restar precio (float) del producto en Monto_total
+**Si no se encuentra:**
+7.4 Mostrar mensaje de producto no encontrado (string)
+
+**Si la opción es ver_carrito:**
+8. Mostrar todos los productos en Lista_carrito (lista de diccionarios)
+8.1 Mostrar Monto_total (float)
+
+**Si la opción es finalizar_compra":**
+9. Calcular Monto_toal con impuestos
+9.1 Mostrar Monto_total (float) a pagar 
+9.2 Mostrar Lista_carrito (lista de diccionario)
+9.3 Leer confirmación de pago (string) (Si/No)
+**Si el usuario realizo el pago:**
+9.4 Vaciar Lista_carrito (lista vacia de diccionarios)
+9.5 Mostrar mensaje de agradecimiento (string)
+**Si el usuario no realiza el pago:**
+9.6 Volver al menu principal
+
+**Si la opción es "salir":**
+10. Terminar programa
 
 
-1.  **Inicio del Programa**:
-    
-    -   El usuario pide al programa mostrar lista de productos.
-    - El usuario ingresa el nombre o un identificador de un producto, dicho producto o ID ira almacenandose en una lista 
-2.  **Menú Principal**:
-    
-    -   El usuario ve las siguientes opciones:
-        1.  Agregar producto al carrito
-        2.  Ver carrito
-        3.  Finalizar compra
-        4.  Salir
-3.  **Agregar Producto al Carrito**:
-    
-    -   Si el usuario elige agregar un producto, el programa le pide que ingrese el nombre o identificador del producto.
-    -   El programa también solicita el precio del producto.
-    -   El producto y su precio se agregan a una lista que representa el carrito de compras.
-    -   El programa vuelve al menú principal.
-4.  **Ver Carrito**:
-    
-    -   Si el usuario elige ver el carrito, el programa muestra todos los productos que se han agregado al carrito junto con sus precios.
-    -   El programa también muestra el total acumulado de los precios de los productos en el carrito.
-    -   El programa vuelve al menú principal.
-5.  **Finalizar Compra**:
-    
-    -   Si el usuario elige finalizar la compra, el programa muestra el total a pagar.
-    -   El programa muestra un mensaje de agradecimiento por la compra.
-    -   El carrito de compras se vacía para estar listo para una nueva compra.
-    -   El programa vuelve al menú principal.
-6.  **Salir**:
-    
-    -   Si el usuario elige salir, el programa termina su ejecución.
+## Salida
+11. Detalles del carrito (lista de productos con sus precios y cantidades)
+11.1 Monto total después de impuestos (float)
+11.2 Mensaje de agradecimiento después del pago (string)
